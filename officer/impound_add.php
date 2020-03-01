@@ -1,0 +1,15 @@
+<!- developer tremendous chatikobo time at 10:50 11/17/2018 -->
+<?php
+require_once '../connect.php';
+	if(ISSET($_POST['add'])){
+		$license_id = $_POST['license_id'];
+		$reg = $_POST['regnumber'];
+		$veh = $_POST['vehicle_color'];
+		$mod = $_POST['model'];
+		$year = $_POST['year_man'];
+		// $date = $_POST['date_in'];
+		$conn->query("INSERT INTO `impounding` VALUES('', '$reg', '$veh','$mod','$year',NOW())") or die(mysqli_error($conn));
+		header('location: check_license.php');
+	}
+
+?>

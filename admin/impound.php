@@ -1,0 +1,13 @@
+<!- developer tremendous chatikobo time at 10:50 11/17/2018 -->
+<?php
+require_once '../connect.php';
+	if(ISSET($_POST['add'])){
+		$license_id = $_POST['license_id'];
+		$offense = $_POST['offense_name'];
+		$reporter = $_POST['reporter'];
+		$location = $_POST['location'];
+		$conn->query("INSERT INTO `offenses` VALUES('', '$license_id', '$offense',NOW(),'$reporter','$location')") or die(mysqli_error($conn));
+		header('location: check_license.php');
+	}
+
+?>
