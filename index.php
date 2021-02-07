@@ -18,7 +18,7 @@ if (isset($_POST['login'])){
         $password = $_POST["password"]; 
 
         $result ="";
-        $query = "SELECT * FROM vid_user WHERE username ='$username' AND password = '$password'";
+        $query = "SELECT * FROM user WHERE username ='$username' AND password = '$password'";
         $result = mysqli_query($conn, $query);
         $rows=mysqli_fetch_array($result);
         // $role=$rows['role'];
